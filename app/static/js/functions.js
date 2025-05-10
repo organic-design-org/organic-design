@@ -11,3 +11,11 @@ function showModal(modalID) {
       modal.style.display="block";
     }
 }
+function toggleHidden(elementID) {
+    var element = document.getElementById(elementID);
+    if (element.style.display === "none") {
+        element.style.display = "block";
+    } else {
+        element.style.display = "none";
+    }
+}
