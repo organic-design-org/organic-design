@@ -5,7 +5,7 @@
 @use './utilities/colours' as *;
 
 /*! Bootstrap with custom variables */
-@use '../assets/node_modules/bootstrap/scss/bootstrap' with (
+@use '../local/node_modules/bootstrap/scss/bootstrap' with (
     $h1-font-size: 1.6rem,
     $h2-font-size: 1.25rem,
     $h3-font-size: 1.2rem,
@@ -13,13 +13,13 @@
     $h5-font-size: 1rem,
     $h6-font-size: 0.9rem,
     $popover-max-width: 600px,
-    $primary: $custom-green,
+    $primary: $custom-blue,
     $secondary: $custom-light,
     $dark: $custom-dark
 );
 
 /*! W3.CSS */
-@use '../assets/w3css/w3' as *;
+@use '../local/w3css/w3' as *;
 
 /*! Custom */
 @use './fixes/' as *;

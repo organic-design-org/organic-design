@@ -8,28 +8,37 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/changes.css')}}">
     <script src="{{url_for('static', filename='js/functions.js')}}"></script>
     <!--Favicon-->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static', filename='favicon/apple-touch-icon.png')}}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='favicon/favicon-32x32.png')}}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static', filename='favicon/favicon-16x16.png')}}">
-    <link rel="manifest" href="{{url_for('static', filename='favicon/site.webmanifest')}}">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='./favicon/favicon.ico')}}">
 </head>
 <body>
 
     <!-- Include the top navigation bars -->
     {% include "parts/topnav.html" %}
 
+    {% if session.get('msg')  %}
+        {% include 'parts/modal_msg.html' %}
+    {% endif %}
+    {% if session.get('conf') %}
+        {% include 'parts/modal_confirm.html' %}
+    {% endif %}
+
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-2 w3-light-grey px-0">
+        <div class="col-2 w3-bar text-white bg-dark secondNav">
+            <button class="btn text-white w3-hide-large" onclick="w3_open()">&#9776;</button>
+            <a href="/home" class="w3-bar-item w3-button w3-hover-black ms-2 w3-padding-small">Organic Design v.0</a>
+        </div>
+            <div class="w3-sidebar w3-collapse w3-animate-left w3-light-grey px-0">
                 <!-- Include sidebar -->
                 {% include "parts/sidenav.html" %}
             </div>
 
-            <!-- Block Content is the main content on pages -->
-            {% block content %}
+            <div class="col-lg-10">
+                <!-- Block Content is the main content on pages -->
+                {% block content %}
+                {% endblock %}
+            </div>
             
-            {% endblock %}
-        </div>
+            
     </div>
 
 </body>
