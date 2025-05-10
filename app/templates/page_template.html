@@ -23,21 +23,22 @@
     {% endif %}
 
     <div class="container-fluid">
-        <div class="col-2 w3-bar text-white bg-dark secondNav">
-            <button class="btn text-white w3-hide-large" onclick="w3_open()">&#9776;</button>
-            <a href="/home" class="w3-bar-item w3-button w3-hover-black ms-2 w3-padding-small">Organic Design v.0</a>
-        </div>
-            <div class="w3-sidebar w3-collapse w3-animate-left w3-light-grey px-0">
-                <!-- Include sidebar -->
-                {% include "parts/sidenav.html" %}
+        <div class="row">
+            <div class="col-2 w3-bar text-white bg-dark secondNav">
+                <button class="btn text-white w3-hide-large" onclick="w3_open()">&#9776;</button>
+                <a href="/home" class="w3-bar-item w3-button w3-hover-black ms-2 w3-padding-small">Organic Design v.0</a>
             </div>
-
-            <div class="col-lg-10">
-                <!-- Block Content is the main content on pages -->
-                {% block content %}
-                {% endblock %}
-            </div>
+                <div class="col-2 w3-light-grey px-0">
+                    <!-- Include sidebar -->
+                    {% include "parts/sidenav.html" %}
+                </div>
+                <div class="col-10">
+                    <!-- Block Content is the main content on pages -->
+                    {% block content %}
+                    {% endblock %}
+                </div>
             
+        </div>
             
     </div>
 
