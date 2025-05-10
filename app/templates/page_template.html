@@ -24,11 +24,11 @@
 
     <div class="page-container">
         <div class="w3-bar text-white bg-dark secondNav">
-            <button class="w3-bar-item w3-button text-white w3-hide-large w3-padding-small" onclick="w3_open(sidebar)">&#9776;</button>
+            <button class="w3-bar-item w3-button text-white w3-hide-large w3-padding-small" onclick="toggleDisplay('sidebar')">&#9776;</button>
             <a href="/home" class="w3-bar-item w3-button w3-hover-black ms-2 w3-padding-small">Organic Design v.0</a>
         </div>
         <div class="content-container">
-            <div class="w3-light-grey w3-hide-small w3-hide-medium w3-animate-left px-0 sidebar" id="sidebar">
+            <div class="w3-light-grey w3-animate-left px-0 sidebar w3-bar-block w3-hide-small w3-hide-medium" id="sidebar">
                 <!-- Include sidebar -->
                 {% include "parts/sidenav.html" %}
             </div>        
