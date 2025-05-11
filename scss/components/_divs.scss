@@ -1,15 +1,20 @@
 #orgDivContainer {
-    width: 970px; 
-    height: 500px;
-    overflow: hidden;
-  }
-  #orgDiv {
-    width: 20px;
-    height: 20px;
-    float: left; 
-    background-color: black;
-  }   
+  width: 970px; 
+  height: 500px;
+  overflow: hidden;
+}
+#orgDiv {
+  width: 20px;
+  height: 20px;
+  float: left; 
+  background-color: black;
+}   
 
-  .content-container {
-    display: flex;
-  }
+.content-container {
+  display: flex;
+}
+.div-container {
+    width:1000px;
+    max-width:100%;
+    margin: auto;
+}

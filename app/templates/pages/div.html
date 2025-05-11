@@ -2,20 +2,29 @@
 
 {% block content %}
 
-<div class="container-fluid p-3" style="width:1000px">
+<!-- <div class="container-fluid p-3" style="width:1000px">
   <h1 class="">{{title}}</h1>
   <div class="w3-bar mt-3">
     <a href="/home" class="btn btn-primary btn-lg text-white">&#x276E; Previous</a>
-    <a href="/" class="btn btn-primary btn-lg text-white w3-right">Next &#x276F;</a>
-  </div>
+    <a href="/" class="btn btn-primary btn-lg text-white" style="position:absolute;right:10px;max-width:1000px">Next &#x276F;</a>
+  </div> -->
+
+  <div class="container-fluid p-3 div-container">
+    <h1>{{title}}</h1>
+  
+    <div class="w3-bar mt-3 position-relative">
+      <a href="/home" class="btn btn-primary btn-lg text-white">&#x276E; Previous</a>
+      <a href="/" class="btn btn-primary btn-lg text-white w3-right">Next &#x276F;</a>
+    </div>
+  
   <hr>
   <div class="">
     <h2>Unique Divs</h2>
     <p>Organic Design provides utilities to generate unique elements for your web pages. Use the tool below to generate a fixed-dimension Organic Design Div.</p>
   </div>
   <!-- <div class="container w3-border w3-border-grey p-3"> -->
-    <div id="orgDivContainer" class="w3-border w3-border-grey p-3">
-      <div id="orgDiv" class="me-2"></div>
+    <div id="orgDivContainer" class="w3-border w3-border-grey p-3" style="height:{{containerHeight}}">
+      <div id="orgDiv" class="me-2" style="height:{{divHeight}};width:{{divWidth}}"></div>
       <p class="">Text in an aligned div. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque imperdiet libero eu neque facilisis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit architecto aspernatur suscipit error saepe laudantium ipsam sed laboriosam illum adipisci. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa exercitationem minus sint consequuntur voluptas harum quos error delectus deserunt quaerat quis veritatis cum, a amet sapiente architecto? Unde porro nihil magni blanditiis facere quam aliquid eum labore ipsum harum fuga nostrum minima voluptate quidem neque, saepe repellendus. Cumque ea excepturi consectetur vitae ipsa eligendi qui quisquam, alias autem rerum praesentium quam ex quod modi nesciunt, voluptatibus, ut nihil! Dolor non aliquam nesciunt repudiandae voluptatum placeat ratione suscipit quod, quasi, eligendi dolores blanditiis veniam amet ab cumque ad totam voluptatem rem? Voluptate excepturi quae ipsum omnis consequatur quidem incidunt ea. Quibusdam!Unde porro nihil magni blanditiis facere quam aliquid eum labore ipsum harum fuga nostrum minima voluptate quidem neque, saepe repellendus. Cumque ea excepturi consectetur vitae ipsa eligendi qui quisquam, alias autem rerum praesentium quam ex quod modi nesciunt, voluptatibus, ut nihil! Dolor non aliquam nesciunt repudiandae voluptatum placeat ratione suscipit quod, quasi, eligendi dolores blanditiis veniam amet ab cumque ad totam voluptatem rem? Voluptate excepturi quae ipsum omnis consequatur quidem incidunt ea. Quibusdam!</p>
     </div>
     <div class="container-fluid mt-3">
@@ -25,12 +34,12 @@
             <div class="row mt-2 pt-2">
               <div class="col-4"><label for="divWidth" class="form-label">Div Width</label></div>
               <div class="col-6"><input type="range" class="form-range" min="40" max="780" id="divWidth" name="divWidth" value="278"></div>
-              <div class="col-2"><span class="small">278</span></div>
+              <div class="col-2"><span class="small">298</span></div>
             </div>
             <div class="row mt-2">
               <div class="col-4"><label for="divHeight" class="form-label">Div Height</label></div>
-              <div class="col-6"><input type="range" class="form-range" min="40" max="780" id="divHeight" name="divHeight" value="466"></div>
-              <div class="col-2"><span class="small">466</span></div>
+              <div class="col-6"><input type="range" class="form-range" min="40" max="780" id="divHeight" name="divHeight" value="{{divHeight}}"></div>
+              <div class="col-2"><span class="small">{{divHeight}}</span></div>
             </div>
             <div class="row mt-2">
               <div class="col-4">

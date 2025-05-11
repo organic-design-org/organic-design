@@ -24,7 +24,11 @@ function toggleDisplay(elementID) {
   var element = document.getElementById(elementID);
   if (element.className.indexOf("w3-show") == -1) {
     element.className += " w3-show";
+    element.className = element.className.replace(" w3-hide-medium", "");
+    element.className = element.className.replace(" w3-hide-small", "");
   } else { 
     element.className = element.className.replace(" w3-show", "");
+    element.className += " w3-hide-medium";
+    element.className += " w3-hide-small";
   }
 }
