@@ -1,4 +1,4 @@
-from flask import session
+from flask import request, session
 
 def msg_modal(msg):
     if msg == 'clear':
@@ -17,3 +17,10 @@ def conf_modal(msg, url, cancel=False):
     session['confirmroute'] = url
     if cancel:
         session['cancel'] = True
+
+def get_form_values():
+    formValues = {}
+    formValues['divWidth'] = request.form.get('divWidth')
+    formValues['divHeight'] = request.form.get('divHeight')
+    formValues['containerHeight'] = int(formValues['divHeight']) + 70
+    return formValues

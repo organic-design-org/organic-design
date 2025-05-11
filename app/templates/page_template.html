@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Organic Design Div</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/changes.css')}}">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- JS -->
     <script src="{{url_for('static', filename='js/functions.js')}}"></script>
+    <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
     <!--Favicon-->
     <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='./favicon/favicon.ico')}}">
 </head>
@@ -15,12 +20,8 @@
     <!-- Include the top navigation bars -->
     {% include "parts/topnav.html" %}
 
-    {% if session.get('msg')  %}
-        {% include 'parts/modal_msg.html' %}
-    {% endif %}
-    {% if session.get('conf') %}
-        {% include 'parts/modal_confirm.html' %}
-    {% endif %}
+    {% include 'parts/modal_msg.html' %}
+    {% include 'parts/modal_confirm.html' %}
 
     <div class="page-container">
         <div class="w3-bar text-white bg-dark secondNav">
@@ -37,6 +38,8 @@
             {% endblock %}
         </div>       
     </div>
+
+    <script src="{{url_for('static', filename='js/scripts.js')}}"></script>
 
 </body>
 </html>

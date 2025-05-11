@@ -17,14 +17,13 @@
       <a href="/" class="btn btn-primary btn-lg text-white w3-right">Next &#x276F;</a>
     </div>
   
-  <hr>
-  <div class="">
-    <h2>Unique Divs</h2>
-    <p>Organic Design provides utilities to generate unique elements for your web pages. Use the tool below to generate a fixed-dimension Organic Design Div.</p>
-  </div>
-  <!-- <div class="container w3-border w3-border-grey p-3"> -->
-    <div id="orgDivContainer" class="w3-border w3-border-grey p-3" style="height:{{containerHeight}}">
-      <div id="orgDiv" class="me-2" style="height:{{divHeight}};width:{{divWidth}}"></div>
+    <hr>
+    <div class="">
+      <h2>Unique Divs</h2>
+      <p>Organic Design provides utilities to generate unique elements for your web pages. Use the tool below to generate a fixed-dimension Organic Design Div.</p>
+    </div>
+    <div id="orgDivContainer" class="w3-border w3-border-grey p-3" style="height:{{formValues['containerHeight']}}px">
+      <div id="orgDiv" class="me-2" style="height:{{formValues['divHeight']}}px;width:{{formValues['divWidth']}}px"></div>
       <p class="">Text in an aligned div. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque imperdiet libero eu neque facilisis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit architecto aspernatur suscipit error saepe laudantium ipsam sed laboriosam illum adipisci. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa exercitationem minus sint consequuntur voluptas harum quos error delectus deserunt quaerat quis veritatis cum, a amet sapiente architecto? Unde porro nihil magni blanditiis facere quam aliquid eum labore ipsum harum fuga nostrum minima voluptate quidem neque, saepe repellendus. Cumque ea excepturi consectetur vitae ipsa eligendi qui quisquam, alias autem rerum praesentium quam ex quod modi nesciunt, voluptatibus, ut nihil! Dolor non aliquam nesciunt repudiandae voluptatum placeat ratione suscipit quod, quasi, eligendi dolores blanditiis veniam amet ab cumque ad totam voluptatem rem? Voluptate excepturi quae ipsum omnis consequatur quidem incidunt ea. Quibusdam!Unde porro nihil magni blanditiis facere quam aliquid eum labore ipsum harum fuga nostrum minima voluptate quidem neque, saepe repellendus. Cumque ea excepturi consectetur vitae ipsa eligendi qui quisquam, alias autem rerum praesentium quam ex quod modi nesciunt, voluptatibus, ut nihil! Dolor non aliquam nesciunt repudiandae voluptatum placeat ratione suscipit quod, quasi, eligendi dolores blanditiis veniam amet ab cumque ad totam voluptatem rem? Voluptate excepturi quae ipsum omnis consequatur quidem incidunt ea. Quibusdam!</p>
     </div>
     <div class="container-fluid mt-3">
@@ -32,77 +31,87 @@
         <div class="row">
           <div class="col-5">
             <div class="row mt-2 pt-2">
-              <div class="col-4"><label for="divWidth" class="form-label">Div Width</label></div>
-              <div class="col-6"><input type="range" class="form-range" min="40" max="780" id="divWidth" name="divWidth" value="278"></div>
-              <div class="col-2"><span class="small">298</span></div>
+              <div class="col-3"><label for="divWidth" class="form-label small">Div Width</label></div>
+              <div class="col-6"><input type="range" class="form-range" min="40" max="780" id="divWidth" name="divWidth" value="{{formValues['divWidth']}}"></div>
+              <div class="col-3"><div id="divWidthTag" class="w3-tag w3-small w3-round bg-primary w-100"></div></div>
             </div>
             <div class="row mt-2">
-              <div class="col-4"><label for="divHeight" class="form-label">Div Height</label></div>
-              <div class="col-6"><input type="range" class="form-range" min="40" max="780" id="divHeight" name="divHeight" value="{{divHeight}}"></div>
-              <div class="col-2"><span class="small">{{divHeight}}</span></div>
+              <div class="col-3"><label for="divHeight" class="form-label small">Div Height</label></div>
+              <div class="col-6"><input type="range" class="form-range" min="40" max="780" id="divHeight" name="divHeight" value="{{formValues['divHeight']}}"></div>
+              <div class="col-3"><div id="divHeightTag" class="w3-tag w3-small w3-round bg-primary w-100"></div></div>
             </div>
             <div class="row mt-2">
-              <div class="col-4">
-                <label for="style" class="form-label">Edge Style:</label>
+              <div class="col-3"><label for="style" class="form-label small">Edge Style:</label>
               </div>
-              <div class="col-6">
+              <div class="col-9">
                 <select class="form-select" name="style" id="style">
-                  <option>Rectangular Curved</option>
-                  <option>Rectangular Jagged</option>
-                  <option>Circular</option>
-                  <option>Circular Jagged</option>
+                  <option value="testing">Testing</option>
+                  <option value="">Rectangular Curved</option>
+                  <option value="">Rectangular Jagged</option>
+                  <option value="">Circular</option>
+                  <option value="">Circular Jagged</option>
                 </select>
               </div>
             </div>
             <div class="row mt-2">
-              <div class="col-4"><label for="divDetail" class="form-label">Edge Detail</label></div>
+              <div class="col-3"><label for="divDetail" class="form-label small">Edge Detail</label></div>
               <div class="col-6"><input type="range" class="form-range" min="20" max="100" id="divDetail" name="divDetail"></div>
-              <div class="col-2 small">60</div>
+              <div class="col-3"><div id="divDetailTag" class="w3-tag w3-small w3-round bg-primary w-100"></div></div>
             </div>
             <div class="row mt-2">
-              <div class="col-4"><label for="divVariation" class="form-label">Edge Variation</label></div>
-              <div class="col-6"><input type="range" class="form-range" min="2" max="30" id="divVariation" name="divVariation"></div>
-              <div class="col-2 small">16</div>
+              <div class="col-3"><label for="divVariation" class="form-label small">Variation</label></div>
+              <div class="col-6"><input type="range" class="form-range" min="2" max="30" id="divVar" name="divVar"></div>
+              <div class="col-3"><div id="divVarTag" class="w3-tag w3-small w3-round bg-primary w-100"></div></div>
             </div>
             <div class="row mt-2">
-              <div class="col-4">
-                <label for="backcolour" class="form-label">Colour:</label>
-              </div>
-              <div class="col-6">
-                <input type="color" class="w-100" id="backcolour" name="backcolour" value="#BBBBBB">
-              </div>
+              <div class="col-3"><label for="backcolour" class="form-label small">Colour:</label></div>
+              <div class="col-6"><input type="color" class="w-100" id="divCol" name="divCol" value="#bbbbbb"></div>
+              <div class="col-3"><div id="divColTag" class="w3-tag w3-small pt-1 pb-2 w3-round bg-primary w-100"></div></div>
             </div>
             <div class="row mt-2">
               <div class="col d-grid">
-                <button type="submit" class="btn btn-primary btn-block text-white">Generate Div</button>
+                <button type="submit" class="btn btn-primary btn-block mt-2 text-white">Generate Div</button>
               </div>
             </div>
           </div>
           <div class="col-7 bg-light p-2">
             <div class="row">
               <div class="col">
-                <h3 class="h3">HTML</h3>
+                <h3 class="h3">HTML <span class="w3-right w3-small p-1 fa fa-clone cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Copy HTML" onclick="copyText('divHTML')"></span></h3>
                 <div class="w3-panel w3-white border-start border-5 border-primary">
-                  <pre id="divHTML" class="w3-text-grey">
-                  </pre>
+<pre id="divHTML" class="w3-text-grey">
+
+</pre>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col">
-                <h3 class="h3">CSS</h3>
+                <h3 class="h3">CSS <span class="w3-right w3-small p-1 fa fa-clone cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Copy CSS" onclick="copyText('divCSS')"></span></h3>
                 <div class="w3-panel w3-white border-start border-5 border-primary">
-                  <pre id="divCSS" class="w3-text-grey">
-                  </pre>
+<pre id="divCSS" class="w3-text-grey">
+
+</pre>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col">
-                <h3 class="h3">SASS Variables</h3>
+                <h3 class="h3">SASS Variables <span class="w3-right w3-small p-1 fa fa-clone cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Copy SASS" onclick="copyText('divSASS')"></span></h3>
                 <div class="w3-panel w3-white border-start border-5 border-primary">
-                  <pre id="divSASS" class="w3-text-grey">
-                  </pre>
+<pre id="divSASS" class="w3-text-grey">
+
+</pre>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <h3 class="h3">JSON <span class="w3-right w3-small p-1 fa fa-clone cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Copy JSON" onclick="copyText('divJSON')"></span></h3>
+                <div class="w3-panel w3-white border-start border-5 border-primary">
+<pre id="divJSON" class="w3-text-grey">
+
+</pre>
                 </div>
               </div>
             </div>
@@ -110,11 +119,6 @@
         </div>
       </form>
     </div>
-  <!-- </div> -->
-</div>
-
-<div id="testDiv">
-  <!-- sc -->
 </div>
 
 {% endblock %}

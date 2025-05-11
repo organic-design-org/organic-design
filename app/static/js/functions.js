@@ -32,3 +32,12 @@ function toggleDisplay(elementID) {
     element.className += " w3-hide-small";
   }
 }
+
+function copyText(field) {
+  // Get the text field
+  var text = document.getElementById(field);
+  // Copy the text inside the text field
+  navigator.clipboard.writeText(text.innerText);
+  document.getElementById("modal-msg-div").style.display="block";
+  document.getElementById("modal-body").innerHTML = "Copied to clipboard";
+}
