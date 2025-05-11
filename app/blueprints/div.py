@@ -6,4 +6,16 @@ div = Blueprint('div', __name__)
 @div.route('/div', methods=['GET', 'POST'])
 def divpage():
     formValues = functions.get_form_values()
-    return render_template('pages/div.html', title="Organic Design Divs", page="div", formValues=formValues)
+    if formValues['divStyle'] == 'rectJag':
+        functions.rectJag(formValues)
+    elif formValues['divStyle'] == 'rectCurve':
+        functions.rectCurve(formValues)
+    elif formValues['divStyle'] == 'circ':
+        functions.circ(formValues)
+    elif formValues['divStyle'] == 'circJag':
+        functions.circJag(formValues)
+    
+        
+
+    code = functions.show_code(formValues)
+    return render_template('pages/div.html', title="Organic Design Divs", page="div", formValues=formValues, code=code)

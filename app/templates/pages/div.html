@@ -4,12 +4,17 @@
 
 <style>
   #orgDivContainer {
-    height:{{formValues['containerHeight']}}px;
+    height:{{formValues['containerHeight']}}px;  
+  }
+  #orgDivContainerInner {
+    filter: drop-shadow(rgba(0, 0, 0, 1) 2px 8px 8px);
   }
   #orgDiv {
-    height:{{formValues['divHeight']}}px;
-    width:{{formValues['divWidth']}}px;
+    height:{{formValues['orgDivHeight']}};
+    width:{{formValues['orgDivWidth']}};
     background-color:{{formValues['divCol']}};
+    clip-path:{{formValues['clipPath']}}; 
+    shape-outside:{{formValues['shapeOutside']}}; 
   }
 </style>
 
@@ -27,7 +32,9 @@
       <p>Organic Design provides utilities to generate unique elements for your web pages. Use the tool below to generate a fixed-dimension Organic Design Div.</p>
     </div>
     <div id="orgDivContainer" class="w3-border w3-border-grey p-3">
-      <div id="orgDiv" class="me-2"></div>
+      <div id="orgDivContainerInner">
+        <div id="orgDiv" class="me-2"></div>
+      </div>
       <p class="">Text in an aligned div. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque imperdiet libero eu neque facilisis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit architecto aspernatur suscipit error saepe laudantium ipsam sed laboriosam illum adipisci. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa exercitationem minus sint consequuntur voluptas harum quos error delectus deserunt quaerat quis veritatis cum, a amet sapiente architecto? Unde porro nihil magni blanditiis facere quam aliquid eum labore ipsum harum fuga nostrum minima voluptate quidem neque, saepe repellendus. Cumque ea excepturi consectetur vitae ipsa eligendi qui quisquam, alias autem rerum praesentium quam ex quod modi nesciunt, voluptatibus, ut nihil! Dolor non aliquam nesciunt repudiandae voluptatum placeat ratione suscipit quod, quasi, eligendi dolores blanditiis veniam amet ab cumque ad totam voluptatem rem? Voluptate excepturi quae ipsum omnis consequatur quidem incidunt ea. Quibusdam!Unde porro nihil magni blanditiis facere quam aliquid eum labore ipsum harum fuga nostrum minima voluptate quidem neque, saepe repellendus. Cumque ea excepturi consectetur vitae ipsa eligendi qui quisquam, alias autem rerum praesentium quam ex quod modi nesciunt, voluptatibus, ut nihil! Dolor non aliquam nesciunt repudiandae voluptatum placeat ratione suscipit quod, quasi, eligendi dolores blanditiis veniam amet ab cumque ad totam voluptatem rem? Voluptate excepturi quae ipsum omnis consequatur quidem incidunt ea. Quibusdam!</p>
     </div>
     <div class="container-fluid mt-3">
@@ -106,40 +113,32 @@
             <div class="row">
               <div class="col">
                 <h3 class="h3">HTML <span class="w3-right w3-small p-1 fa fa-clone cPoint" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Copy HTML" onclick="copyText('divHTML')"></span></h3>
-                <div class="w3-panel w3-white border-start border-5 border-primary">
-<pre id="divHTML" class="w3-text-grey">
-
-</pre>
+                <div class="w3-panel w3-white border-start border-5 border-primary pt-2">
+                  <pre id="divHTML" class="w3-text-grey">{{code['html']}}</pre>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col">
                 <h3 class="h3">CSS <span class="w3-right w3-small p-1 fa fa-clone cPoint" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Copy CSS" onclick="copyText('divCSS')"></span></h3>
-                <div class="w3-panel w3-white border-start border-5 border-primary">
-<pre id="divCSS" class="w3-text-grey">
-
-</pre>
+                <div class="w3-panel w3-white border-start border-5 border-primary pt-2">
+                  <pre id="divCSS" class="w3-text-grey">{{code['css']}}</pre>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col">
                 <h3 class="h3">SASS Variables <span class="w3-right w3-small p-1 fa fa-clone cPoint" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Copy SASS" onclick="copyText('divSASS')"></span></h3>
-                <div class="w3-panel w3-white border-start border-5 border-primary">
-<pre id="divSASS" class="w3-text-grey">
-
-</pre>
+                <div class="w3-panel w3-white border-start border-5 border-primary pt-2">
+                  <pre id="divSASS" class="w3-text-grey">{{code['sass']}}</pre>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col">
                 <h3 class="h3">JSON <span class="w3-right w3-small p-1 fa fa-clone cPoint" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Copy JSON" onclick="copyText('divJSON')"></span></h3>
-                <div class="w3-panel w3-white border-start border-5 border-primary">
-<pre id="divJSON" class="w3-text-grey">
-
-</pre>
+                <div class="w3-panel w3-white border-start border-5 border-primary pt-2">
+                  <pre id="divJSON" class="w3-text-grey">{{code['json']}}</pre>
                 </div>
               </div>
             </div>
