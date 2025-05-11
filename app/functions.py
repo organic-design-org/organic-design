@@ -19,8 +19,19 @@ def conf_modal(msg, url, cancel=False):
         session['cancel'] = True
 
 def get_form_values():
-    formValues = {}
-    formValues['divWidth'] = request.form.get('divWidth')
-    formValues['divHeight'] = request.form.get('divHeight')
-    formValues['containerHeight'] = int(formValues['divHeight']) + 70
+    # Default Values  
+    formValues = {
+        'divWidth': 410,
+        'divHeight': 410,
+        'containerHeight': 480,
+        'divStyle': 'testing',
+        'divDetail': 60,
+        'divVar': 16,
+        'divCol': '#bbbbbb'
+    }
+    # If the form is submitted, update the formValues with the submitted data
+    if request.method == 'POST':
+        for key in formValues:
+            if key in request.form:
+                formValues[key] = request.form.get(key)
     return formValues

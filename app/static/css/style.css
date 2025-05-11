@@ -13758,8 +13758,12 @@ a {
   width: 100%;
 }
 
-.cursor-pointer {
+.cPoint {
   cursor: pointer;
+}
+
+.form-range:disabled {
+  opacity: 0.4;
 }
 
 /*# sourceMappingURL=style.css.map */
