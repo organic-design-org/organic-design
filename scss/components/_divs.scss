@@ -1,4 +1,4 @@
-#orgDivContainer {
+#orgDivContainerOuter {
   width: 970px; 
   height: 500px;
   overflow: hidden;
@@ -17,4 +17,8 @@
     width:1000px;
     max-width:100%;
     margin: auto;
+}
+
+pre {
+  tab-size: 3;
 }

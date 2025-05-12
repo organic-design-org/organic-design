@@ -13588,7 +13588,7 @@ a {
   background-image: linear-gradient(to right, #f1f1f1, #f8f9fa);
 }
 
-#orgDivContainer {
+#orgDivContainerOuter {
   width: 970px;
   height: 500px;
   overflow: hidden;
@@ -13609,6 +13609,10 @@ a {
   width: 1000px;
   max-width: 100%;
   margin: auto;
+}
+
+pre {
+  tab-size: 3;
 }
 
 .modal {
@@ -13640,7 +13644,7 @@ a {
   margin: 8px 8px;
   padding-top: 0.01em;
   padding-bottom: 0.01em;
-  background: linear-gradient(to right, rgba(108, 117, 125, 0.95), rgba(241, 241, 241, 0.95));
+  background: linear-gradient(to right, rgba(248, 249, 250, 0.95), rgba(241, 241, 241, 0.95));
   color: #222;
 }
 .modalTitle {
