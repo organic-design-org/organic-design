@@ -15,7 +15,10 @@ def divpage():
     elif formValues['divStyle'] == 'circJag':
         functions.circJag(formValues)
     
-        
+    if request.method == 'POST':
+        functions.msg_modal(request.form)
+    
+    form=request.form
 
     code = functions.show_code(formValues)
-    return render_template('pages/div.html', title="Organic Design Divs", page="div", formValues=formValues, code=code)
+    return render_template('pages/div.html', title="Organic Design Divs", page="div", formValues=formValues, code=code, form=form)

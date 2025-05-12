@@ -10,14 +10,15 @@
     filter: drop-shadow(rgba(0, 0, 0, 1) 2px 8px 8px);
   }
   #orgDiv {
-    height:{{formValues['orgDivHeight']}};
-    width:{{formValues['orgDivWidth']}};
+    height:{{formValues['orgDivHeight']}}px;
+    width:{{formValues['orgDivWidth']}}px;
     background-color:{{formValues['divCol']}};
     clip-path:{{formValues['clipPath']}}; 
     shape-outside:{{formValues['shapeOutside']}}; 
   }
 </style>
-
+<!-- <script>console.log('{{formValues}}');</script> -->
+<script>console.log('{{form}}');</script>
   <div class="container-fluid p-3 div-container">
     <h1>{{title}}</h1>
   
@@ -103,6 +104,26 @@
               <div class="col-6"><input type="color" class="w-100 cPoint" id="divCol" name="divCol" value="{{formValues['divCol']}}"></div>
               <div class="col-3"><div id="divColTag" class="w3-tag w3-small pt-1 pb-2 text-uppercase w3-round bg-primary w-100"></div></div>
             </div>
+            <div class="row mt-2">
+              <div class="col-3"><input type="checkbox" class="form-check-input" id="divColGradCheck" name="divColGradCheck" value="something" checked><label class="form-check-label small ps-1" for="divColGradCheck">Gradient</label></div>
+              <div class="col-6"><input type="color" class="w-100 cPoint" id="divColGrad" name="divColGrad" value="{{formValues['divColGrad']}}"></div>
+              <div class="col-3"><div id="divColGradTag" class="w3-tag w3-small pt-1 pb-2 text-uppercase w3-round bg-primary w-100"></div></div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-3"><input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" checked><label class="form-check-label small ps-1" for="check1">Shadow</label></div>
+              <div class="col-6"><input type="color" class="w-100 cPoint" id="divCol" name="divCol" value="{{formValues['divColShadow']}}"></div>
+              <div class="col-3"><div id="divColShadowTag" class="w3-tag w3-small pt-1 pb-2 text-uppercase w3-round bg-primary w-100"></div></div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-3"><input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" checked><label class="form-check-label small ps-1" for="check1">Border</label></div>
+              <div class="col-6"><input type="color" class="w-100 cPoint" id="divCol" name="divCol" value="{{formValues['divColShadow']}}"></div>
+              <div class="col-3"><div id="divColShadowTag" class="w3-tag w3-small pt-1 pb-2 text-uppercase w3-round bg-primary w-100"></div></div>
+            </div>
+            <!-- <div class="row mt-2">
+              <div class="col-3"><input class="w3-check" type="checkbox" checked="checked"><label class="small">Shadow</label></div>
+              <div class="col-6"></div>
+              <div class="col-3"></div>
+            </div> -->
             <div class="row mt-2">
               <div class="col d-grid">
                 <button type="submit" class="btn btn-primary btn-block mt-2 text-white">Generate Div</button>
