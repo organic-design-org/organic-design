@@ -13,3 +13,9 @@
 .alert-primary {
     background-image: linear-gradient(to right, $custom-blue-dark, $custom-blue-light);
 }
+.bg-secondary,
+.btn-secondary,
+.badge-secondary,
+.alert-secondary {
+    background-image: linear-gradient(to right, $w3-light-grey, $bs-light);
+}

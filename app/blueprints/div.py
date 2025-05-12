@@ -5,18 +5,21 @@ div = Blueprint('div', __name__)
 
 @div.route('/div', methods=['GET', 'POST'])
 def divpage():
+    style_map = {
+        "rectJag": functions.rectJag,
+        # "rectCurve": functions.rectCurve,
+        # "circ": functions.circ,
+        # "circJag": functions.circJag,
+        "testing": lambda fv: fv  # no-op or a dedicated function
+    }
+
     formValues = functions.get_form_values()
-    if formValues['divStyle'] == 'rectJag':
-        functions.rectJag(formValues)
-    elif formValues['divStyle'] == 'rectCurve':
-        functions.rectCurve(formValues)
-    elif formValues['divStyle'] == 'circ':
-        functions.circ(formValues)
-    elif formValues['divStyle'] == 'circJag':
-        functions.circJag(formValues)
-    
-    if request.method == 'POST':
-        functions.msg_modal(request.form)
+    style = formValues['divStyle']
+    if style in style_map:
+        style_map[style](formValues)
+
+    # if request.method == 'POST':
+    #     functions.msg_modal(request.form)
     
     form=request.form
 

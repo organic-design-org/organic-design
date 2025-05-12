@@ -1,4 +1,4 @@
-const sliders = ["divHeight", "divWidth", "divDetail", "divVar", "divCol"];
+const sliders = ["divHeight", "divWidth", "divDetail", "divVar", "divCol", "divGradCol", "divShadowCol", "divBorderCol"];
 sliders.forEach(element => {
     var elementID = document.getElementById(element);
     var outputTxt = element + 'Tag';

@@ -25,14 +25,18 @@ def intRandom(min, max):
 def get_form_values():
     # Default Values  
     formValues = {
+        'divStyle': 'rectJag',
         'divWidth': 410,
-        'orgDivWidth': 410,
         'divHeight': 410,
-        'orgDivHeight': 410,
-        'divStyle': 'testing',
         'divDetail': 60,
         'divVar': 16,
-        'divCol': '#bbbbbb'
+        'divCol': '#bbbbbb',
+        'divGradCheck': "False",
+        'divGradCol':'#bbbbbb',
+        'divShadowCheck': "False",
+        'divShadowCol': '#bbbbbb',
+        'divBorderCheck': "False",
+        'divBorderCol': '#bbbbbb'
     }
     # If the form is submitted, update the formValues with the submitted data
     if request.method == 'POST':
@@ -44,6 +48,8 @@ def get_form_values():
         formValues['containerHeight'] = int(formValues['divHeight']) + 70
         formValues['clipPath'] = 'none'
         formValues['shapeOutside'] = 'none'
+        formValues['orgDivWidth'] = formValues['divWidth'] 
+        formValues['orgDivHeight'] = formValues['divHeight']
     return formValues
 
 def rectJag(formValues):
@@ -52,9 +58,9 @@ def rectJag(formValues):
     ys = int(formValues['divVar']) + 20
     xe = int(formValues['divWidth']) + xs
     ye = int(formValues['divHeight']) + ys
-    formValues['orgDivHeight'] = str(int(formValues['divHeight']) + int(formValues['divVar']) + 50) + 'px'
-    formValues['orgDivWidth'] = str(int(formValues['divWidth']) + int(formValues['divVar']) + 50) + 'px'
-    formValues['containerHeight'] = str(int(formValues['divHeight']) + int(formValues['divVar']) + 70) + 'px'
+    formValues['orgDivHeight'] = int(formValues['divHeight']) + int(formValues['divVar']) + 50
+    formValues['orgDivWidth'] = int(formValues['divWidth']) + int(formValues['divVar']) + 50
+    formValues['containerHeight'] = int(formValues['divHeight']) + int(formValues['divVar']) + 70
     coords = str(xs) + 'px ' + str(ys) + 'px, '
     # 1st line: xs, ys - xs, ye
     x = xs

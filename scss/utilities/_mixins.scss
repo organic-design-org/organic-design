@@ -1,5 +1,5 @@
 @use './colours' as *;
 
 @mixin grey-gradient {
-    background: linear-gradient(to right, rgba($bs-light, 0.95), rgba($w3-light-grey, 0.95));
+    background: linear-gradient(to right, rgba($bs-secondary, 0.95), rgba($w3-light-grey, 0.95));
 }

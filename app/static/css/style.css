@@ -13581,6 +13581,13 @@ a {
   background-image: linear-gradient(to right, #0D6EFD, #2196F3);
 }
 
+.bg-secondary,
+.btn-secondary,
+.badge-secondary,
+.alert-secondary {
+  background-image: linear-gradient(to right, #f1f1f1, #f8f9fa);
+}
+
 #orgDivContainer {
   width: 970px;
   height: 500px;
@@ -13633,7 +13640,7 @@ a {
   margin: 8px 8px;
   padding-top: 0.01em;
   padding-bottom: 0.01em;
-  background: linear-gradient(to right, rgba(248, 249, 250, 0.95), rgba(241, 241, 241, 0.95));
+  background: linear-gradient(to right, rgba(108, 117, 125, 0.95), rgba(241, 241, 241, 0.95));
   color: #222;
 }
 .modalTitle {
