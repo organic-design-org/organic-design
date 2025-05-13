@@ -205,9 +205,61 @@ def show_code(formValues):
     }
     return code
 
+def rectJag_svg_path(formValues):
+    divDetail = 110 - int(formValues['divDetail'])
+    divVariation = int(formValues['divVar'])
+    xs = formValues['xs']
+    ys = formValues['ys']
+    xe = formValues['xe']
+    ye = formValues['ye']
+    
+    x = xs
+    y = ys
+    path = f"M {x} {y} "
+    
+    for i in range(4):
+        while True:
+            mvFw = intRandom(1, intRandom(1, divDetail))
+            mvSide = intRandom(0, divVariation * 2) - divVariation
+
+            if i == 0:
+                y += mvFw
+                x = xs + mvSide
+                if y >= ye:
+                    x = xs
+                    y = ye
+                    break
+            elif i == 1:
+                x += mvFw
+                y = ye + mvSide
+                if x >= xe:
+                    x = xe
+                    y = ye
+                    break
+            elif i == 2:
+                y -= mvFw
+                x = xe + mvSide
+                if y <= ys:
+                    x = xe
+                    y = ys
+                    break
+            elif i == 3:
+                x -= mvFw
+                y = ys + mvSide
+                if x <= xs:
+                    x = xs
+                    y = ys
+                    break
+            path += f"L {x} {y} "
+    
+    path += "Z"
+    formValues['svgPath'] = path
+    msg_modal(f"SVG Path: {path}")
+
 style_map = {
     "rectJag": rectJag,
-    "rectCurve": rectCurve
+    "rectCurve": rectCurve,
+    "rectJag_svg": rectJag_svg_path
     # "circ": circ,
     # "circJag": circJag,
     # "testing": lambda fv: fv  # no-op or a dedicated function

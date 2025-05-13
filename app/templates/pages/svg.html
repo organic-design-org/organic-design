@@ -51,9 +51,13 @@
       <p>Organic Design provides utilities to generate unique elements for your web pages. Use the tool below to generate a fixed-dimension Organic Design Div.</p>
     </div>
     <div id="orgDivContainerOuter" class="w3-border w3-border-grey p-3">
-      <div id="orgDivContainer">
+      <!-- <div id="orgDivContainer">
         <div id="orgDiv" class="me-2"></div>
       </div>
+       -->
+       <svg viewBox="0 0 {{formValues['orgDivWidth']}} {{formValues['orgDivHeight']}}" xmlns="http://www.w3.org/2000/svg" class="w-100" style="max-width:600px; background:{{formValues['divCol']}};">
+        <path d="{{formValues['svgPath']}}" fill="{{formValues['divCol']}}" />
+      </svg>
       <p class="">Text in an aligned div. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque imperdiet libero eu neque facilisis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit architecto aspernatur suscipit error saepe laudantium ipsam sed laboriosam illum adipisci. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa exercitationem minus sint consequuntur voluptas harum quos error delectus deserunt quaerat quis veritatis cum, a amet sapiente architecto? Unde porro nihil magni blanditiis facere quam aliquid eum labore ipsum harum fuga nostrum minima voluptate quidem neque, saepe repellendus. Cumque ea excepturi consectetur vitae ipsa eligendi qui quisquam, alias autem rerum praesentium quam ex quod modi nesciunt, voluptatibus, ut nihil! Dolor non aliquam nesciunt repudiandae voluptatum placeat ratione suscipit quod, quasi, eligendi dolores blanditiis veniam amet ab cumque ad totam voluptatem rem? Voluptate excepturi quae ipsum omnis consequatur quidem incidunt ea. Quibusdam!Unde porro nihil magni blanditiis facere quam aliquid eum labore ipsum harum fuga nostrum minima voluptate quidem neque, saepe repellendus. Cumque ea excepturi consectetur vitae ipsa eligendi qui quisquam, alias autem rerum praesentium quam ex quod modi nesciunt, voluptatibus, ut nihil! Dolor non aliquam nesciunt repudiandae voluptatum placeat ratione suscipit quod, quasi, eligendi dolores blanditiis veniam amet ab cumque ad totam voluptatem rem? Voluptate excepturi quae ipsum omnis consequatur quidem incidunt ea. Quibusdam!</p>
     </div>
     <div class="container-fluid mt-3">
@@ -76,7 +80,7 @@
             <div class="row mt-2 pt-2">
               <div class="col-3"><label for="divWidth" class="form-label small">Div Width</label></div>
               <div class="col-6"><input type="range" class="form-range" min="40" max="780" id="divWidth" name="divWidth" value="{{formValues['divWidth']}}"></div>
-              <div class="col-3"><div id="divWidthTag" class="w3-tag w3-small w3-round bg-primary text-white w-100"></div></div>
+              <div class="col-3"><div id="divWidthTag" class="w3-tag w3-small w3-round bg-secondary text-black w-100"></div></div>
             </div>
             {% if formValues['divStyle'] == 'circ' %}
             <div class="row mt-2 opacity-25" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Div Height is set by Div Width for this style">
@@ -85,7 +89,7 @@
             {% endif %}            
               <div class="col-3"><label for="divHeight" class="form-label small">Div Height</label></div>
               <div class="col-6"><input type="range" class="form-range" min="40" max="780" id="divHeight" name="divHeight" value="{% if formValues['divStyle'] == 'circ' %}{{formValues['divWidth']}}{% else %}{{formValues['divHeight']}}{% endif %}"{% if formValues['divStyle'] == 'circ' %} disabled{% endif %}></div>
-              <div class="col-3"><div id="divHeightTag" class="w3-tag w3-small w3-round bg-primary text-white w-100"></div></div>
+              <div class="col-3"><div id="divHeightTag" class="w3-tag w3-small w3-round bg-secondary text-black w-100"></div></div>
             </div>            
             {% if formValues['divStyle'] == 'testing' %}
             <div class="row mt-2 opacity-25" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edge Detail is disabled for this style">
@@ -94,7 +98,7 @@
             {% endif %}
               <div class="col-3"><label for="divDetail" class="form-label small">Edge Detail</label></div>
               <div class="col-6"><input type="range" class="form-range" min="20" max="100" id="divDetail" name="divDetail" value="{{formValues['divDetail']}}"{% if formValues['divStyle'] == 'testing' %} disabled{% endif %}></div>
-              <div class="col-3"><div id="divDetailTag" class="w3-tag w3-small w3-round bg-primary text-white w-100"></div></div>
+              <div class="col-3"><div id="divDetailTag" class="w3-tag w3-small w3-round bg-secondary text-black w-100"></div></div>
             </div>
             
             {% if formValues['divStyle'] == 'testing' %}
@@ -104,13 +108,13 @@
             {% endif %}
               <div class="col-3"><label for="divVariation" class="form-label small">Variation</label></div>
               <div class="col-6"><input type="range" class="form-range" min="2" max="30" id="divVar" name="divVar" value="{{formValues['divVar']}}"{% if formValues['divStyle'] == 'testing' %} disabled{% endif %}></div>
-              <div class="col-3"><div id="divVarTag" class="w3-tag w3-small w3-round bg-primary text-white w-100"></div></div>
+              <div class="col-3"><div id="divVarTag" class="w3-tag w3-small w3-round bg-secondary text-black w-100"></div></div>
             </div>
 
             <div class="row mt-2">
               <div class="col-3"><label for="backcolour" class="form-label small">Colour:</label></div>
               <div class="col-6"><input type="color" class="w-100 cPoint" id="divCol" name="divCol" value="{{formValues['divCol']}}"></div>
-              <div class="col-3"><div id="divColTag" class="w3-tag w3-small pt-1 pb-2 text-uppercase w3-round bg-primary text-white w-100"></div></div>
+              <div class="col-3"><div id="divColTag" class="w3-tag w3-small pt-1 pb-2 text-uppercase w3-round bg-secondary text-black w-100"></div></div>
             </div>
 
             <!-- Optional -->
@@ -118,17 +122,17 @@
             <div class="row mt-2{% if formValues['divGradCheck'] != 'True' %} opacity-75{% endif %}">
               <div class="col-3"><input type="checkbox" class="form-check-input" id="divGradCheck" name="divGradCheck" value="True"{% if formValues['divGradCheck'] == "True" %} checked{% endif %}><label class="form-check-label small ps-1" for="divGradCheck">Gradient</label></div>
               <div class="col-6"><input type="color" class="w-100 cPoint" id="divGradCol" name="divGradCol" value="{{formValues['divGradCol']}}"></div>
-              <div class="col-3"><div id="divGradColTag" class="w3-tag w3-small pt-1 pb-2 text-uppercase w3-round bg-primary text-white w-100"></div></div>
+              <div class="col-3"><div id="divGradColTag" class="w3-tag w3-small pt-1 pb-2 text-uppercase w3-round bg-secondary text-black w-100"></div></div>
             </div>
             <div class="row mt-2{% if formValues['divShadowCheck'] != 'True' %} opacity-75{% endif %}">
               <div class="col-3"><input type="checkbox" class="form-check-input" id="divShadowCheck" name="divShadowCheck" value="True"{% if formValues['divShadowCheck'] == "True" %} checked{% endif %}><label class="form-check-label small ps-1" for="divShadowCheck">Shadow</label></div>
               <div class="col-6"><input type="color" class="w-100 cPoint" id="divShadowCol" name="divShadowCol" value="{{formValues['divShadowCol']}}"></div>
-              <div class="col-3"><div id="divShadowColTag" class="w3-tag w3-small pt-1 pb-2 text-uppercase w3-round bg-primary text-white w-100"></div></div>
+              <div class="col-3"><div id="divShadowColTag" class="w3-tag w3-small pt-1 pb-2 text-uppercase w3-round bg-secondary text-black w-100"></div></div>
             </div>
             <div class="row mt-2{% if formValues['divBorderCheck'] != 'True' %} opacity-75{% endif %}">
               <div class="col-3"><input type="checkbox" class="form-check-input" id="divBorderCheck" name="divBorderCheck" value="True"{% if formValues['divBorderCheck'] == "True" %} checked{% endif %}><label class="form-check-label small ps-1" for="divBorderCheck">Border</label></div>
               <div class="col-6"><input type="color" class="w-100 cPoint" id="divBorderCol" name="divBorderCol" value="{{formValues['divBorderCol']}}"></div>
-              <div class="col-3"><div id="divBorderColTag" class="w3-tag w3-small pt-1 pb-2 text-uppercase w3-round bg-primary text-white w-100"></div></div>
+              <div class="col-3"><div id="divBorderColTag" class="w3-tag w3-small pt-1 pb-2 text-uppercase w3-round bg-secondary text-black w-100"></div></div>
             </div>
             <!-- <div class="row mt-2">
               <div class="col-3"><input type="checkbox" class="form-check-input" id="div_Check" name="div_Check" value="True" checked><label class="form-check-label small ps-1" for="div_Check">Border</label></div>
