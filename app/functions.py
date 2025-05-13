@@ -52,7 +52,7 @@ def get_form_values():
         formValues['orgDivHeight'] = formValues['divHeight']
     return formValues
 
-def rectJag(formValues):
+def rectJagBAK(formValues):
     divDetail = 110 - int(formValues['divDetail'])
     xs = int(formValues['divVar']) + 20
     ys = int(formValues['divVar']) + 20
@@ -121,6 +121,61 @@ def rectJag(formValues):
     coords += str(x) + 'px ' + str(y) + 'px'
     formValues['clipPath'] = 'polygon(' + str(coords) + ')'
     formValues['shapeOutside'] = 'polygon(' + str(coords) + ')'
+
+def rectJag(formValues):
+    divDetail = 110 - int(formValues['divDetail'])
+    divVariation = int(formValues['divVar'])
+    divWidth = int(formValues['divWidth'])
+    divHeight = int(formValues['divHeight'])
+    padding = 20
+    margin = 50
+    containerPadding = 70
+    xs = divVariation + padding # x coordinate start point
+    ys = divVariation + padding # y coordinate start point
+    xe = divWidth + xs
+    ye = divHeight + ys
+    formValues['orgDivHeight'] = divHeight + divVariation + margin
+    formValues['orgDivWidth'] = divWidth + divVariation + margin
+    formValues['containerHeight'] = divHeight + divVariation + containerPadding
+    coords = f'{xs}px {ys}px'
+
+    for i in range(4):
+        x = xs if i < 2 else xe
+        y = ys if i < 1 or i > 2 else ye
+        while True:
+            mvFw = intRandom(1,intRandom(1, divDetail))
+            mvSide = intRandom(0, divVariation * 2) - divVariation
+            if i == 0:
+                y += mvFw
+                x = xs + mvSide
+                if y >= ye:
+                    x = xs
+                    y = ye
+                    break
+            elif i == 1:
+                x += mvFw
+                y = ye + mvSide
+                if x >= xe:
+                    x = xe
+                    y = ye
+                    break
+            elif i == 2:
+                y -= mvFw
+                x = xe + mvSide
+                if y <= ys:
+                    x = xe
+                    y = ys
+                    break
+            elif i == 3:    
+                x -= mvFw
+                y = ys + mvSide
+                if x <= xs:
+                    x = xs
+                    y = ys
+                    break
+            coords += f", {x}px {y}px"
+    formValues['clipPath'] = f'polygon({coords})'
+    formValues['shapeOutside'] = f'polygon({coords})'
 
 def show_code(formValues):
     # HTML
