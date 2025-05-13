@@ -1,0 +1,25 @@
+{% extends "page_template.html" %}
+{% block content %}
+
+<style>
+    {{ code.css|safe }}
+</style>
+
+<div class="container-fluid h-100">
+    <h2>{{title}}</h2>
+    <p>This page displays a randomly-generated div using the <a href="/api">API</a></p>
+    
+    <div class="code-container">
+        {{ code.html|safe }}
+        <a class="btn btn-primary text-white mt-3" href="/demo">Generate random div</a>
+    </div>
+    
+    <hr>
+
+<h3 class="h5"><span class="w3-small pe-1 fa fa-clone cPoint" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Copy CSS" onclick="copyText('divCSS')"></span> CSS</h3>
+<pre class="w3-panel w3-white border-start border-5 border-primary w3-text-grey small">{{code['css']}}</pre>
+
+
+</div>
+
+{% endblock %}

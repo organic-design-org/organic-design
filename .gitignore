@@ -176,3 +176,6 @@ cython_debug/
 
 # Local folder includes node_modules for bootstrap, w3.css and other local development files. 
 local/
+
+# Backup file
+rectCurve.py 

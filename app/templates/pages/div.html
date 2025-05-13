@@ -33,12 +33,10 @@
     {% else %}
     background-color:{{formValues['divCol']}};
     {% endif %}
-    clip-path:{{formValues['clipPath']}}; 
-    shape-outside:{{formValues['shapeOutside']}}; 
+    clip-path:{{formValues['clipPath'] | safe}}; 
+    shape-outside:{{formValues['shapeOutside'] | safe}}; 
   }
 </style>
-<!-- <script>console.log('{{formValues}}');</script> -->
-<script>console.log('{{form}}');</script>
   <div class="container-fluid p-3 div-container">
     <h1>{{title}}</h1>
   
@@ -185,5 +183,7 @@
       </form>
     </div>
 </div>
+
+<script src="{{url_for('static', filename='js//pages/divs.js')}}"></script>
 
 {% endblock %}

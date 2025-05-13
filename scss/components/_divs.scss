@@ -22,3 +22,14 @@
 pre {
   tab-size: 3;
 }
+
+.code-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  a {
+    width: 250px;
+  }
+
+}
