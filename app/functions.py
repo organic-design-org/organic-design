@@ -52,76 +52,6 @@ def get_form_values():
         formValues['orgDivHeight'] = formValues['divHeight']
     return formValues
 
-def rectJagBAK(formValues):
-    divDetail = 110 - int(formValues['divDetail'])
-    xs = int(formValues['divVar']) + 20
-    ys = int(formValues['divVar']) + 20
-    xe = int(formValues['divWidth']) + xs
-    ye = int(formValues['divHeight']) + ys
-    formValues['orgDivHeight'] = int(formValues['divHeight']) + int(formValues['divVar']) + 50
-    formValues['orgDivWidth'] = int(formValues['divWidth']) + int(formValues['divVar']) + 50
-    formValues['containerHeight'] = int(formValues['divHeight']) + int(formValues['divVar']) + 70
-    coords = str(xs) + 'px ' + str(ys) + 'px, '
-    # 1st line: xs, ys - xs, ye
-    x = xs
-    y = ys
-    br = False
-    while (br == False):
-        mvFw = intRandom(1,intRandom(1, divDetail))
-        mvSide = intRandom(0, (int(formValues['divVar']) * 2)) - int(formValues['divVar'])
-        y += mvFw
-        x = xs + mvSide
-        if y >= ye:
-            x = xs
-            y = ye
-            br = True
-        coords += str(x) + 'px ' + str(y) + 'px, '
-    # 2nd line: xs, ye - xe, ye
-    x = xs
-    y = ye
-    br = False
-    while (br == False):
-        mvFw = intRandom(1,intRandom(1, divDetail))
-        mvSide = intRandom(0, (int(formValues['divVar']) * 2)) - int(formValues['divVar'])
-        x += mvFw
-        y = ye + mvSide
-        if x >= xe:
-            x = xe
-            y = ye
-            br = True
-        coords += str(x) + 'px ' + str(y) + 'px, '
-    # 3rd line: xe, ye - xe, ys
-    x = xe
-    y = ye
-    br = False
-    while (br == False):
-        mvFw = intRandom(1,intRandom(1, divDetail))
-        mvSide = intRandom(0, (int(formValues['divVar']) * 2)) - int(formValues['divVar'])
-        y -= mvFw
-        x = xe + mvSide
-        if y <= ys:
-            x = xe
-            y = ys
-            br = True
-        coords += str(x) + 'px ' + str(y) + 'px, '
-    # 4th line: xe, ys - xs, ys
-    x = xe
-    y = ys
-    br = False
-    while (br == False):
-        mvFw = intRandom(1,intRandom(1, divDetail))
-        mvSide = intRandom(0, (int(formValues['divVar']) * 2)) - int(formValues['divVar'])
-        x -= mvFw
-        y = ys + mvSide
-        if x <= xs:
-            x = xs
-            y = ys
-            br = True
-        coords += str(x) + 'px ' + str(y) + 'px, '
-    coords += str(x) + 'px ' + str(y) + 'px'
-    formValues['clipPath'] = 'polygon(' + str(coords) + ')'
-    formValues['shapeOutside'] = 'polygon(' + str(coords) + ')'
-
 def rectJag(formValues):
     divDetail = 110 - int(formValues['divDetail'])
     divVariation = int(formValues['divVar'])
@@ -138,7 +68,7 @@ def rectJag(formValues):
     formValues['orgDivWidth'] = divWidth + divVariation + margin
     formValues['containerHeight'] = divHeight + divVariation + containerPadding
     coords = f'{xs}px {ys}px'
-
+    
     for i in range(4):
         x = xs if i < 2 else xe
         y = ys if i < 1 or i > 2 else ye

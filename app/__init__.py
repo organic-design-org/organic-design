@@ -1,6 +1,7 @@
 import os
 
 from flask import Flask, session
+from app.blueprints.api import api
 from app.blueprints.home import home
 from app.blueprints.div import div
 from app.blueprints.nav import nav
@@ -13,5 +14,6 @@ def create_app():
     app.register_blueprint(home)
     app.register_blueprint(div)
     app.register_blueprint(nav)
+    app.register_blueprint(api)
     return app
 
