@@ -71,7 +71,7 @@
                   <option value="rectCurve"{% if formValues['divStyle'] == 'rectCurve' %} selected{% endif %}>Rectangular Curved</option>
                   <option value="circ"{% if formValues['divStyle'] == 'circ' %} selected{% endif %}>Circular</option>
                   <option value="circJag"{% if formValues['divStyle'] == 'circJag' %} selected{% endif %}>Circular Jagged</option>
-                  <option value="testing"{% if formValues['divStyle'] == 'testing' %} selected{% endif %}>Testing</option>
+                  <!-- <option value="testing"{% if formValues['divStyle'] == 'testing' %} selected{% endif %}>Testing</option> -->
                 </select>
               </div>
             </div>
@@ -95,7 +95,7 @@
             <div class="row mt-2">
             {% endif %}
               <div class="col-3"><label for="divDetail" class="form-label small">Edge Detail</label></div>
-              <div class="col-6"><input type="range" class="form-range" min="20" max="100" id="divDetail" name="divDetail"{% if formValues['divStyle'] == 'testing' %} disabled{% endif %}></div>
+              <div class="col-6"><input type="range" class="form-range" min="20" max="100" id="divDetail" name="divDetail" value="{{formValues['divDetail']}}"{% if formValues['divStyle'] == 'testing' %} disabled{% endif %}></div>
               <div class="col-3"><div id="divDetailTag" class="w3-tag w3-small w3-round bg-secondary text-black w-100"></div></div>
             </div>
             
@@ -105,7 +105,7 @@
             <div class="row mt-2">
             {% endif %}
               <div class="col-3"><label for="divVariation" class="form-label small">Variation</label></div>
-              <div class="col-6"><input type="range" class="form-range" min="2" max="30" id="divVar" name="divVar"{% if formValues['divStyle'] == 'testing' %} disabled{% endif %}></div>
+              <div class="col-6"><input type="range" class="form-range" min="2" max="30" id="divVar" name="divVar" value="{{formValues['divVar']}}"{% if formValues['divStyle'] == 'testing' %} disabled{% endif %}></div>
               <div class="col-3"><div id="divVarTag" class="w3-tag w3-small w3-round bg-secondary text-black w-100"></div></div>
             </div>
 

@@ -127,7 +127,7 @@ def show_code(formValues):
     htmlcode = ""
     if formValues['divShadowCheck'] == "True" or formValues['divBorderCheck'] == "True":
         htmlcode += '<div id="organicDivContainer">' 
-    htmlcode += "<div id='organicDiv'><div>"
+    htmlcode += "<div id='organicDiv'></div>"
     if formValues['divShadowCheck'] == "True" or formValues['divBorderCheck'] == "True":
         htmlcode += '</div>' 
     # CSS
@@ -151,7 +151,6 @@ def show_code(formValues):
         csscode += f"\n\tclip-path: {formValues['clipPath']};"
         csscode += f"\n\tshape-outside: {formValues['shapeOutside']};"
     csscode += "\n}\n\n"
-
     # SASS
     sasscode = ""
     if formValues['divShadowCheck'] == "True" or formValues['divBorderCheck'] == "True":
@@ -168,8 +167,7 @@ def show_code(formValues):
     sasscode += f"\n$height: {formValues['divHeight']}px;\n$width: {formValues['divWidth']}px;"
     if formValues['divStyle'] != 'testing':
         sasscode += f"\n$clip-path: {formValues['clipPath']};\n$shape-outside: {formValues['shapeOutside']};"
-    sasscode += "\n\n"
-    
+    sasscode += "\n\n"    
     # JSON
     jsoncode = "{"
     if formValues['divShadowCheck'] == "True" or formValues['divBorderCheck'] == "True":
