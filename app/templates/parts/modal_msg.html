@@ -1,0 +1,24 @@
+{% if session.get('msg')  %}
+  <div class="modal modal-small" id="modal-msg-div" style="display:block">
+{% else %}
+  <div class="modal modal-small" id="modal-msg-div" style="display:none">
+{% endif %}
+    <div class="modal-content">
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <div class="modalTitle" id="modal-title">Alert</div>
+      <span class="close" onclick="hideModal('modal-msg-div')">&times;</span>
+    </div>
+    <!-- Modal body -->
+    <div class="modal-body" id="modal-body">
+      {% for message in session.get('messages') %}
+        {{message}}
+        <br>
+      {% endfor %}
+    </div>
+    <!-- Modal footer -->
+    <div class="modal-footer">
+      <a class="button button-blue" onclick="hideModal('modal-msg-div')">OK</a>
+    </div>
+  </div>
+</div>

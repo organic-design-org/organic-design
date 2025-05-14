@@ -1,0 +1,15 @@
+<div class="w3-bar w3-border w3-light-grey firstNav">
+    <a href="/home" class="navbar-brand w3-bar-item w3-button pt-3 pb-2"><img src="{{url_for('static', filename='favicon/favicon.ico')}}" alt="Organic Design Logo Roundel" id="siteLogo"></a>
+
+    <button class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-hide-medium" onclick="toggleHidden('dropdown')">Menu &#11206;</button>
+
+        <div class="w3-dropdown-content w3-bar-block w3-dark-grey w3-mobile" id="dropdown" style="display:none">
+            <button onclick="toggleHidden('dropdown')" class="w3-bar-item w3-button w3-large">&times;</button>
+            {% include "parts/topmenu.html" %}
+        </div>
+
+        <div class="w3-hide-small">{% include "parts/topmenu.html" %}</div>
+
+
+</div> 
+

@@ -1,0 +1,26 @@
+{% if session.get('conf') %}
+  <div class="modal modal-small" id="modal-confirm-div" style="display:block">
+{% else %}
+  <div class="modal modal-small" id="modal-confirm-div" style="display:none">
+{% endif %}
+  <div class="modal-content">
+  <!-- Modal Header -->
+  <div class="modal-header">
+      <div class="modalTitle">Confirm</div>
+      <span class="close float-end" onclick="hideModal('modal-confirm-div')">&times;</span>
+  </div>
+  <!-- Modal body -->
+  <div class="modal-body">
+    {{session.get('confirm')}}
+  </div>
+  <!-- Modal footer -->
+  <div class="modal-footer">
+      <form action="{{session.get('confirmroute')}}" method="post">
+        <button type="submit" class="button button-blue" name="confirmBtn" name="action" value="confirm">OK</button>
+        {% if session.get('cancel') %}  
+          <button class="button button-red" type="button" id="modalCloseBottom" onclick="hideModal('modal-confirm-div')" name="action" value="cancel">Cancel</button>
+        {% endif %}
+      </form>
+  </div>
+  </div>
+</div>
